@@ -28,4 +28,19 @@ public List<BookingModel> getdata()
 }
 
 
+@GetMapping("/id/{myId}")
+    public BookingModel GetbookingById(@PathVariable Long myId)
+{
+return Bservice.findByid(myId).orElse(null);
+}
+
+
+@DeleteMapping("/id/{myId}")
+
+public void deleteappointment(@PathVariable Long myId)
+{
+    Bservice.deletebyid(myId);
+}
+
+
 }
